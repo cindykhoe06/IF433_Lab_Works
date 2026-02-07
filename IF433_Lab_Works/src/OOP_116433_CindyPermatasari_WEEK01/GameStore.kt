@@ -2,10 +2,14 @@ fun main() {
     val gameTitle = "Mobile Legends"
     val price = 650000
 
+    val userNote: String? = null
+
     val discount = calculateDiscount(price)
     val finalPrice = price - discount
 
     printReceipt(title = gameTitle, finalPrice = finalPrice)
+
+    println("Catatan    : ${userNote ?: "Tidak ada catatan"}")
 }
 
 fun calculateDiscount(price: Int): Int = if (price > 500000) {
