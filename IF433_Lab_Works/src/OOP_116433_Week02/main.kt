@@ -52,7 +52,6 @@ fun main() {
         duration = 1
     }
 
-    // Instansiasi objek Loan
     val loan = Loan(title, borrower, duration)
 
     println("\n--- DETAIL PEMINJAMAN ---")
@@ -61,4 +60,47 @@ fun main() {
     println("Durasi: ${loan.loanDuration} hari")
     println("Total Denda: Rp ${loan.calculateFine()}")
 
+    scanner.nextLine()
+
+    println("\n--- WELCOME TO MINI RPG ---")
+    print("Nama Hero: ")
+    val heroName = scanner.nextLine() // Ganti next() jadi nextLine() biar bisa spasi
+
+    print("Base Damage: ")
+    val damage = scanner.nextInt()
+
+    val myHero = Hero(heroName, damage)
+    var enemyHp = 100
+
+    // Main Loop
+    while (myHero.isAlive() && enemyHp > 0) {
+        println("\nHP ${myHero.name}: ${myHero.hp} | HP Enemy: $enemyHp")
+        println("Menu: 1. Serang, 2. Kabur")
+        print("Pilihan: ")
+        val choice = scanner.nextInt()
+
+        if (choice == 1) {
+            // Hero Menyerang
+            myHero.attack("Enemy")
+            enemyHp -= myHero.baseDamage
+            println("HP Musuh tersisa: $enemyHp")
+
+            // Musuh membalas jika masih hidup
+            if (enemyHp > 0) {
+                val monsterDamage = (10..20).random()
+                myHero.takeDamage(monsterDamage)
+                println("Musuh menyerang balik! $heroName menerima $monsterDamage damage.")
+            }
+        } else if (choice == 2) {
+            println("Kamu melarikan diri dari pertarungan!")
+            break
+        }
+    }
+
+    // Pengumuman pemenang
+    if (!myHero.isAlive()) {
+        println("\nGAME OVER... ${myHero.name} telah gugur.")
+    } else if (enemyHp <= 0) {
+        println("\nVICTORY! Musuh berhasil dikalahkan.")
+    }
 }
