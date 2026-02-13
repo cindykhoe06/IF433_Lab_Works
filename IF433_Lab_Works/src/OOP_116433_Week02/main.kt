@@ -21,9 +21,11 @@ fun main() {
     } else {
         print("Masukkan Jurusan: ")
         val major = scanner.nextLine()
-    }
+
 
     // instansiasi objek karena data sudah aman
     val s1 = student(name, nim, major)
+    println("status: pendaftaran selesai.")
+    }
 }
 
