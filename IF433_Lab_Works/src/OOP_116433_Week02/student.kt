@@ -1,4 +1,4 @@
-package oop_001_johntor.week02
+package OOP_116433_Week02
 
 class student (
     val name: String,
