@@ -3,7 +3,7 @@ package OOP_116433_Week02
 class student (
     val name: String,
     val nim: String,
-    val major: String
+    var major: String
 ){
     //body class kosong dulu
 }
