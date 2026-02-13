@@ -1,13 +1,5 @@
 package OOP_116433_Week02
 
-class student (
-    val name: String,
-    val nim: String,
-    var major: String
-){
-    //body class kosong dulu
-}
-
 class student (val name: String, val nim: String, val major: String) {
     init {
         //validasi sederhana : cek panjang nim
@@ -17,5 +9,10 @@ class student (val name: String, val nim: String, val major: String) {
         } else {
             println("LOG: objek student $name berhasil dialokasikan di memory.")
         }
+    }
+    //secondary constructor
+//wajib memanggil primary constructor menggunakan 'this()' constructor
+    constructor(name: String, nim: String) : this(name, nim, "Non-Matriculated") {
+        println("LOG: Menggunakan constructor  jalur umum (Tanpa Jurusan).")
     }
 }
