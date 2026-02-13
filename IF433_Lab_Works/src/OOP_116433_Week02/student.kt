@@ -1,6 +1,6 @@
 package OOP_116433_Week02
 
-class student (val name: String, val nim: String, val major: String) {
+class student (val name: String, val nim: String, val major: String, var gpa: Double = 0.0) {
     init {
         //validasi sederhana : cek panjang nim
         if (nim.length != 5) {
