@@ -23,4 +23,14 @@ fun main() {
 
     // 4. Print Tier-nya
     println("Tier Senjata: ${pedang.tier}")
+
+    println("=== TUGAS 2: PLAYER ===")
+    val player1 = Player("Gamer123")
+
+    // Tambah 50 XP (Total: 50, Level: 1)
+    player1.addXp(50)
+    println("Level ${player1.username} saat ini: ${player1.level}")
+
+    // Tambah 60 XP (Total: 110, Level: 2) -> Akan memicu print "Level Up!"
+    player1.addXp(60)
 }
