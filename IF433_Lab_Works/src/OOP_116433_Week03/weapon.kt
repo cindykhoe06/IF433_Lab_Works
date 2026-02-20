@@ -6,11 +6,10 @@ class Weapon(val name: String) {
         set(value) {
             if (value < 0) {
                 println("Peringatan: Damage tidak boleh negatif! Nilai dipertahankan.")
-                // Kita tidak melakukan 'field = value', sehingga nilai tetap yang lama
             } else if (value > 1000) {
-                field = 1000 // Paksa jadi 1000 jika overpowered
+                field = 1000
             } else {
-                field = value // Nilai valid
+                field = value
             }
         }
 
