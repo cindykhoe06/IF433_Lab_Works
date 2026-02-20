@@ -1,7 +1,5 @@
 package OOP_116433_Week03
 
-package OOP_116433_Week03
-
 class Weapon(val name: String) {
 
     var damage: Int = 0
