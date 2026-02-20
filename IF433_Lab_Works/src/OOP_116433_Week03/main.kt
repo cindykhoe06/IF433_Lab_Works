@@ -9,7 +9,7 @@ fun main() {
     println("gaji: ${e.salary}")
 
     //2. test encapsulation
-    e.increasePerfomance()
+    e.increasePerfomationRating()
     //e.perfomanceRating = 5 ini error
 
     //3. test computed property
