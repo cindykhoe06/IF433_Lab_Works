@@ -24,3 +24,7 @@ fun increasePerfomationRating() {
 fun printStatus(){
     println("karyawan: $name, rating: $perfomanceRating")
 }
+
+// tax (pajak) dihitung 10% dari gaji saat ini
+val tax: Double
+    get() = salary * 0.1
