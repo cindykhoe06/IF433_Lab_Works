@@ -1,9 +1,7 @@
 package OOP_116433_Week03
 
 class Player(val username: String) {
-
     private var xp: Int = 0
-
     val level: Int
         get() = (xp / 100) + 1
 
