@@ -11,3 +11,4 @@ class ElectricCar(
         println("$brand berakselerasi dalam sunyi. Kapasitas baterai: $batteryCapacity%.")
     }
 }
+
