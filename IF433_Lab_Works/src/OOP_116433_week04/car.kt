@@ -5,8 +5,14 @@ open class car(brand: String, val numberOfDoors:Int) : vehicle(brand) {
     fun openTrunk() {
         println("bagasi mobil $brand dengan $numberOfDoors pintu dibuka.")
     }
+
+    override fun honk() {
+        println("Tin Tin! mobil $brand lewat!")
+    }
+
+    override fun accelerate() {
+        super.accelerate() //memanggil logika penambahan kecepatan milik parent
+        println("mobil $brand menggunakan transmisi gigi untuk menambah kecepatan")
+    }
 }
 
-override fun honk() {
-    println("Tin Tin! mobil $brand lewat!")
-}
