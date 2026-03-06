@@ -43,6 +43,12 @@ fun main() {
     for (method in paymentList) {
         println("--> Mencoba pembayaran dengan ${method.accountName}")
         method.processPayment(tagihan)
+        if (method is EWallet) {
+            println("[Sistem mendeteksi ini adalah E-Wallet. Memulai Recovery Top Up...]")
+            method.topUp(50000.0) // method otomatis menjadi EWallet
+            println("--> Mencoba pembayaran ulang dengan E-Wallet...")
+            method.processPayment(tagihan)
+        }
         println("--------------------")
     }
 }
