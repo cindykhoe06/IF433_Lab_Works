@@ -28,6 +28,7 @@ fun main() {
         println("--------------------")
     }
     println("\n====TUGAS MANDIRI 1====")
+    //test pemanggilan fungsi overloading
     val mathHelper = MathHelper()
     println("Luas Persegi (4): ${mathHelper.hitungLuas(4)}")
     println("Luas Persegi Panjang (5,3): ${mathHelper.hitungLuas(5, 3)}")
