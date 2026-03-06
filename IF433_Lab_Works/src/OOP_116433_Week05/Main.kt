@@ -27,4 +27,22 @@ fun main() {
         }
         println("--------------------")
     }
+    println("\n====TUGAS MANDIRI 1====")
+    val mathHelper = MathHelper()
+    println("Luas Persegi (4): ${mathHelper.hitungLuas(4)}")
+    println("Luas Persegi Panjang (5,3): ${mathHelper.hitungLuas(5, 3)}")
+    println("Luas Lingkaran (7.0): ${mathHelper.hitungLuas(7.0)}")
+
+    println("\n====TUGAS MANDIRI 2: POLYMORPHISM====")
+    val myEWallet = EWallet("Akun E-Wallet", 50000.0)
+    val myCreditCard = CreditCard("Akun Credit Card", 100000.0)
+
+    val paymentList: List<PaymentMethod> = listOf(myEWallet, myCreditCard)
+    val tagihan = 75000.0
+
+    for (method in paymentList) {
+        println("--> Mencoba pembayaran dengan ${method.accountName}")
+        method.processPayment(tagihan)
+        println("--------------------")
+    }
 }
