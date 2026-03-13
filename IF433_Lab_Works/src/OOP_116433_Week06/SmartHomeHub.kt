@@ -15,6 +15,7 @@ class SmartHomeHub {
                 device.turnOff()
             }
         }
+    }
         fun activateSecurityMode() {
             println("\n--- Mengaktifkan Mode Keamanan ---")
             for (device in devices) {
@@ -27,4 +28,3 @@ class SmartHomeHub {
             }
         }
     }
-}
