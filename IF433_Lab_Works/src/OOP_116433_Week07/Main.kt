@@ -7,9 +7,13 @@ fun main() {
         DatabaseManager.connect()
         DatabaseManager.connect()
 
-        println("Drop chance LEGENDARY: ${ItemRarity.LEGENDARY.dropChance}%")
-
         val weapon = Weapon.forgeStarterSword()
-        println("Weapon: ${weapon.item.name}, Damage: ${weapon.item.damage}")
+
+        val upgradedItem = weapon.item.copy(damage = 25)
+
+        processEvent(BattleState.SafeZone)
+        processEvent(BattleState.MonsterEncounter("Goblin Nakal"))
+        processEvent(BattleState.LootDropped(upgradedItem))
+        processEvent(BattleState.GameOver("Terkena jebakan racun"))
     }
 }
