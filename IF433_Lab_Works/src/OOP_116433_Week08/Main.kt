@@ -46,4 +46,6 @@ fun main() {
     //kita menekan tombol !! karena kita tahu implementasi java-nya aman
     val statusLength = javaResponse!!.length
     println("Status dari Java: $javaResponse (Length: $statusLength)")
+
+    runMockUnitTest()
 }
