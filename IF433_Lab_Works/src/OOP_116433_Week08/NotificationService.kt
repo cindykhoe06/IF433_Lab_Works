@@ -5,7 +5,7 @@ class NotificationService {
         println("Mengirim email ke: $emailAddress")
     }
 
-    fun processUser(User: UserProfile) {
+    fun processUser(user: UserProfile) {
         //sendEmail(user.email) // ini akan error : type mismatch
 
         if (user.email != null) {
