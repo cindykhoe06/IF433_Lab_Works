@@ -20,7 +20,7 @@ fun main(){
 
     println("\n=== TEST SAFE CASTING ===")
     val mixedData: List<Any> = ListOf(
-        "Smartphone"
+        "Smartphone",
         1500000,
         userProfile("Andi", null),
         "Laptop",
