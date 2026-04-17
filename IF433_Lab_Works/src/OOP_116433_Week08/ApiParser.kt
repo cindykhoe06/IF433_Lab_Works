@@ -1,3 +1,4 @@
+package OOP_116433_Week08
 // ApiParser.kt
 class ApiParser {
     fun parseProduct(rawJson: Map<String, Any?>): Product? {
@@ -20,5 +21,15 @@ class ApiParser {
             }
             else -> null
         }
+    }
+    fun checkout(product: Product) {
+        val id = when (product) {
+            is Electronic -> product.id
+            is Clothing -> product.id
+        }
+
+        // panggil service Java dan gunakan !! untuk membuktikan interop
+        val transactionId = JavaPaymentService.processPayment(id)
+        println("Transaction Output: ${transactionId!!}")
     }
 }
