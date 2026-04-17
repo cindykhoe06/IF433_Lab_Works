@@ -14,5 +14,14 @@ class NotificationService {
         } else {
             println("User ${user.name} tidak memiliki email.")
         }
+        println("\n=== TEST THE RED BUTTON (!!) ===")
+        val toxicData: String? = null
+
+        try {
+            // DANGEROUS: paksa non-null
+            val length = toxicData!!.length
+        } catch (e: NullPointerException) {
+            println("CRASH (NPE)! Jangan gunakan !! secara sembarangan.")
+        }
     }
 }
