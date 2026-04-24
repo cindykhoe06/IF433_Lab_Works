@@ -10,3 +10,4 @@ fun main() {
         TradeLog("BNBUSDT", "LONG", 15, 10.0, "CLOSED"),
         TradeLog("ETHUSDT", "LONG", 10, -1.5, "OPEN")  // Status OPEN (akan difilter)
     )
+}
