@@ -7,6 +7,8 @@ fun main() {
     coinRepo.add(Coin("ETH", 2.3))
     coinRepo.add(Coin("USDT", 100.0))
 
+    val response = ApiResponse("200 OK", coinRepo.getAll())
+
     println("=== Crypto Dashboard ===")
-    println("Coin repository populated with BTC, ETH, USDT.")
+    println("Response Status: ${response.status}")
 }
