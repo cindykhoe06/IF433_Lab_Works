@@ -11,4 +11,8 @@ fun main() {
 
     println("=== Crypto Dashboard ===")
     println("Response Status: ${response.status}")
+    println("\n--- Coin List ---")
+    response.data.forEach { coin ->
+        println("Coin: ${coin.name} | Balance: ${coin.balance}")
+    }
 }
