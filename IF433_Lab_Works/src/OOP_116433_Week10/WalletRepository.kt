@@ -10,21 +10,8 @@ class WalletRepository<T> {
     fun getAll(): List<T> {
         return items.toList()
     }
+}
 
-    class WalletRepository<T> {
-        private var items = mutableListOf<T>()
-
-        fun add(item: T) {
-            items.add(item)
-        }
-
-        fun getAll(): List<T> {
-            return items.toList()
-        }
-    }
-
-    // Extension function: hanya bekerja jika T memiliki nama (constraint Named)
-    fun <T : Named> WalletRepository<T>.search(query: String): List<T> {
-        return getAll().filter { it.name.contains(query, ignoreCase = true) }
-    }
+fun <T : Named> WalletRepository<T>.search(query: String): List<T> {
+    return getAll().filter { it.name.contains(query, ignoreCase = true) }
 }

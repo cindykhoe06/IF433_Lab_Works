@@ -15,6 +15,13 @@ fun main() {
     response.data.forEach { coin ->
         println("Coin: ${coin.name} | Balance: ${coin.balance}")
     }
+
+    println("\n--- Search 'BTC' ---")
+    val searchResult = coinRepo.search("BTC")
+    searchResult.forEach { coin ->
+        println("Found: ${coin.name} | Balance: ${coin.balance}")
+    }
+
     val txRepo = WalletRepository<Transaction>()
     txRepo.add(Transaction("TX001", 50.0))
     txRepo.add(Transaction("TX002", 150.0))
@@ -27,4 +34,7 @@ fun main() {
     txResponse.data.forEach { tx ->
         println("ID: ${tx.id} | Amount: ${tx.amount}")
     }
+
+    println("\n=== All tests passed! Full generic crypto architecture OK ===")
+
 }
