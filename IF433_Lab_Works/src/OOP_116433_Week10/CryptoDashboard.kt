@@ -15,4 +15,16 @@ fun main() {
     response.data.forEach { coin ->
         println("Coin: ${coin.name} | Balance: ${coin.balance}")
     }
+    val txRepo = WalletRepository<Transaction>()
+    txRepo.add(Transaction("TX001", 50.0))
+    txRepo.add(Transaction("TX002", 150.0))
+    txRepo.add(Transaction("TX003", 75.0))
+
+    val txResponse = ApiResponse("200 OK", txRepo.getAll())
+
+    println("\n--- Transaction List ---")
+    println("Response Status: ${txResponse.status}")
+    txResponse.data.forEach { tx ->
+        println("ID: ${tx.id} | Amount: ${tx.amount}")
+    }
 }
