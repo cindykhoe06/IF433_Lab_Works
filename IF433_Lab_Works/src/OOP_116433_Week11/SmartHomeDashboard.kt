@@ -17,4 +17,18 @@ fun main() {
         println("[S.OG] Kamera terhubung")
         homeDevices.add(it)
     }
+    SmartDevice("Kabol AC Inverter", "Cooling").run {
+        isOnline = true
+        powerLoad = 900
+        homeDevices.add(this)
+        println("[Setup] AC ${this.name} dikonfigurasi.")
+    }
+
+    SmartDevice("Piccolo Auto Feeder", "Pet Care").run {
+        isOnline = false
+        powerLoad = 98
+        homeDevices.add(this)
+        println("[Setup] ${this.name} ditambahkan (offline).")
+    }
+
 }
