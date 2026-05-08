@@ -30,5 +30,9 @@ fun main() {
         homeDevices.add(this)
         println("[Setup] ${this.name} ditambahkan (offline).")
     }
+    val searchResult = homeDevices.find { it.category == "Lighting" }
 
+    searchResult?.let {
+        println("\n[Pencarian] Perangkat ditemukan: ${it.name} (${it.category})")
+    } ?: println("\n[Pencarian] Perangkat tidak ditemukan, coba cek ulang daftar.")
 }
