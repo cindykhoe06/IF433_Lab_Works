@@ -10,4 +10,11 @@ fun main() {
         homeDevices.add(it)
         println("[Setup] Lampu ${it.name} ditambahkan.")
     }
+    SmartDevice("Kolin", "Camera").apply {
+        isOnline = true
+        powerLoad = 8
+    }.also {
+        println("[S.OG] Kamera terhubung")
+        homeDevices.add(it)
+    }
 }
