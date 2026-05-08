@@ -7,3 +7,8 @@ data class SmartDevice(
     var id: Int = 0,
     var powerLoad: Int = 0
 )
+
+fun SmartDevice.diagnose(): String {
+    val status = if (isOnline) "Online" else "Offline"
+    return "Nama: $name | Kategori: $category | Status: $status | Daya: ${powerLoad}W"
+}
