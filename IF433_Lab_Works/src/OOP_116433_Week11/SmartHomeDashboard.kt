@@ -35,4 +35,12 @@ fun main() {
     searchResult?.let {
         println("\n[Pencarian] Perangkat ditemukan: ${it.name} (${it.category})")
     } ?: println("\n[Pencarian] Perangkat tidak ditemukan, coba cek ulang daftar.")
+
+    println("\n=== Device Summary (Perangkat Pertama) ===")
+    with(homeDevices[0]) {
+        println("Nama     : $name")
+        println("Kategori : $category")
+        println("Status   : ${if (isOnline) "Online" else "Offline"}")
+        println("Daya     : ${powerLoad}W")
+    }
 }
