@@ -43,4 +43,8 @@ fun main() {
         println("Status   : ${if (isOnline) "Online" else "Offline"}")
         println("Daya     : ${powerLoad}W")
     }
+    val totalPower = homeDevices.run {
+        sumOf { it.powerLoad }
+    }
+    println("\n⚡ Total Daya Seluruh Perangkat: ${totalPower}W")
 }
