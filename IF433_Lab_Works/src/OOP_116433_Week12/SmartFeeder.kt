@@ -26,4 +26,6 @@ fun main() {
     } finally {
         println("Siklus pengecekan pagi selesai.")
     }
+    // Jadwal 2: Sore
+    runCatching { dispenseKibble(requestedGram = 38, availableGram = 1000, isJammed = false) }
 }
