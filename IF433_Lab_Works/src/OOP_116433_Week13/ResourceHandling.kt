@@ -17,6 +17,7 @@ fun main() {
             out.println("Safe Log entry #$i: System status OK.")
         }
     }
+
     println("100 baris log berhasil di-generate dengan sangat aman.")
 
     println("\n=== TEST BUFFERED READER ===")
