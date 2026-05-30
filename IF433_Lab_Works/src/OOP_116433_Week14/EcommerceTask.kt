@@ -61,3 +61,43 @@ class SafeOrderProcessor(
     private val repo: OrderRepository,
     private val notifier: NotificationService
 )
+
+interface PricingStrategy {
+    fun calculate(price: Double): Double
+}
+
+class VipPricing : PricingStrategy {
+
+    override fun calculate(price: Double): Double =
+        price * 0.90
+}
+
+class RegularPricing : PricingStrategy {
+
+    override fun calculate(price: Double): Double =
+        price
+}
+
+class BetterOrderProcessor(
+    private val repo: OrderRepository,
+    private val notifier: NotificationService
+) {
+
+    fun processOrder(
+        itemName: String,
+        basePrice: Double,
+        strategy: PricingStrategy,
+        customerType: String
+    ) {
+
+        val finalPrice = strategy.calculate(basePrice)
+
+        println("Memproses pesanan $itemName seharga $finalPrice")
+
+        repo.saveOrder(itemName, finalPrice, customerType)
+
+        notifier.sendNotification(
+            "Pesanan $itemName Anda telah dikonfirmasi!"
+        )
+    }
+}
