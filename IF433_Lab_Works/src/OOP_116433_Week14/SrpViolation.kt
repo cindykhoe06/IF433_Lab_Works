@@ -1,7 +1,5 @@
 package OOP_116433_Week14
 
-data class User(val name: String, val email: String, val age: Int)
-
 class UserManager {
 
     // Business logic
